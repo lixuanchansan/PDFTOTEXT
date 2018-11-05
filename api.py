@@ -29,6 +29,7 @@ def allowed_file(filename):
 
 @app.route('/pdftotext', methods=['POST'])
 def upload_file():
+    output=""
     try:
         print("lol")
         # check if the post request has the file part
