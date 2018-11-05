@@ -11,8 +11,6 @@ from tika import parser
 
 
 app = Flask(__name__)
-app.secret_key = "super secret key"
-
 
 print("Start api fie")
 
