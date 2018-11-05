@@ -11,6 +11,8 @@ from tika import parser
 
 
 app = Flask(__name__)
+app.secret_key = "super secret key"
+
 
 print("Start api fie")
 
@@ -49,7 +51,7 @@ def upload_file():
         output = output.replace("\n","")
         output=output.replace("\s+|^[ \t]+|[ \t]+$"," ")
     except: 
-        output= parsed["metadata"] 
+        
         print("check if text is returned")
 
     return output
