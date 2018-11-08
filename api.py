@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify,flash,session
 from flask_restful import Api
-
+from flask_cors import CORS
 import tempfile
 import os
 import tika
