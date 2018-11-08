@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify,flash,session
 from flask_restful import Api
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 import tempfile
 import os
 import tika
@@ -11,6 +11,7 @@ from tika import parser
 
 
 app = Flask(__name__)
+CORS(app)
 app.secret_key = "super secret key"
 
 
@@ -28,6 +29,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/pdftotext', methods=['POST'])
+@cross_origin()
 def upload_file():
     output=""
     try:
