@@ -1,7 +1,6 @@
 from flask import Flask,request,jsonify,flash,session
 from flask_restful import Api
 from flask_cors import CORS,cross_origin
-
 import tempfile
 import os
 import tika
@@ -12,6 +11,8 @@ from tika import parser
 
 
 app = Flask(__name__)
+CORS(app)
+CORS(app, intercept_exceptions=False)
 app.secret_key = "super secret key"
 CORS(app)
 
