@@ -12,6 +12,7 @@ from tika import parser
 
 app = Flask(__name__)
 CORS(app)
+CORS(app, intercept_exceptions=False)
 app.secret_key = "super secret key"
 
 
