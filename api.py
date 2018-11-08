@@ -36,6 +36,7 @@ def upload_file():
         if 'file' not in request.files:
             flash('No file part')
         file = request.files['file']
+        print(file)
         # if user does not select file, browser also
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], "data.pdf"))
 
