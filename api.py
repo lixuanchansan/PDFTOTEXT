@@ -1,6 +1,6 @@
 from flask import Flask,request,jsonify,flash,session
 from flask_restful import Api
-
+from flask_cors import CORS
 import tempfile
 import os
 import tika
@@ -11,6 +11,8 @@ from tika import parser
 
 
 app = Flask(__name__)
+
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.secret_key = "super secret key"
 
 
@@ -37,7 +39,7 @@ def upload_file():
             flash('No file part')
         file = request.files['file']
         print(file)
-        # if user does not select file, browser also
+        # if usgiter does not select file, browser also
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], "data.pdf"))
 
     except: 
@@ -57,6 +59,6 @@ def upload_file():
         print("check if text is returned")
 
     return output
-
+    file.
 if __name__ == '__main__':
     app.run(debug=True)
