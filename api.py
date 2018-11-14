@@ -148,6 +148,7 @@ def denoise_text(text):
     
 
 @app.route('/scrap', methods=['POST'])
+@cross_origin()
 def scraping():
     data = request.get_json(force=True)
     url = data["url"]
