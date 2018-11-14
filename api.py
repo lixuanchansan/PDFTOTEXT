@@ -56,8 +56,14 @@ def upload_file():
     except: 
         
         print("check if text is returned")
+    print(repr(file))
+    return clean_space_tab(output)
 
-    return output
-    print(file)
+def clean_space_tab(text):
+    text = re.sub(r'[ ]{2,}',' ', text) #Replaces x multiple of space with 1 space
+    text = re.sub("\t+",' ', text) #Replaces x multiple of tab with 1 space
+    #text = re.sub( '\s+', ' ', text ).strip()
+    return text
+
 if __name__ == '__main__':
     app.run(debug=True)
