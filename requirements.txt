@@ -54,7 +54,7 @@ pipenv==2018.7.1
 progressbar2==3.38.0
 prompt-toolkit==1.0.15
 Pygments==2.2.0
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 python-dateutil==2.5.3
 python-mimeparse==1.6.0
 python-pptx==0.6.6
